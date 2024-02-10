@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happy Valentine's day!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+
+        body {
+            font: 16px/20px 'Cutive Mono', serif;
+        }
+
+        a {
+            color: #222;
+        }
+
+        .wrap {
+            width: 420px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .secret_message {
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <a href="#" class="start">click here to start</a>
+            <div class="secret_message" data-text="Hey, Bibii,<br>
+                <center><strong>Happy Valentine's Day!</strong></center><br>
+                You are handsome, you know that right?<br>
+                But...Here are <strong> 14 reasons why I love you</strong><br><br>
+                Disclaimer: List is in no perfect order<br><br>
+                <strong>14 reasons why I like you?</strong><br>
+                <ul><li>You are cool</li>
+                    <li>You are cute like a mochiiii </li>
+                    <li>You are hands0me</li>
+                    <li>You are smart </li>
+                    <li>You have magical hands and mastered the art of massage </li>
+                    <li>You look like a squid/fish, hihi (cute af again)</li>
+                    <li>You are sexy &#59;)</li>
+                    <li>You are a foodie &#x1F355&#x1F354&#x1F344</li>
+                    <li>You are caring and understanding </li>
+                    <li>You are my dog</li>
+                    <li>You are funnyyyy; thanks for the laughs</li>
+                    <li>You make GREAAAAT FOOD that puts my stress away ughh</li>
+                    <li>You're artistic; paints and writes cool stories!!</li>
+                    <li>You are YOU! </li></ul><br>
+                I hope you will like this. I wuvv you. :)
+                <div align='right'><strong>- x4150</strong></div>"></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var running = false;
+        function typeWriter(text, n) {
+            if (n < (text.length)) {
+                $('.secret_message').html(text.substring(0, n + 1) + "❤");
+                n++;
+                setTimeout(function () {
+                    typeWriter(text, n)
+                }, 100);
+            }
+            else {
+                running = false;
+            }
+        }
+
+        $('.start').click(function (e) {
+            e.stopPropagation();
+            if (running == false) {
+                var text = $('.secret_message').data('text');
+                running = true;
+                typeWriter(text, 0);
+            }
+        });
+    </script>
+</body>
+</html>
